@@ -9,8 +9,8 @@ export const UserCard = ({ id, name, email, role, avatar, ...props }: User) => {
             {/* Imagem: Sempre centralizada no mobile, alinhada à esquerda no desktop */}
             <img
                 className="w-20 h-20 rounded-full object-cover border-2 border-slate-100"
-                src={avatar || "/default-user.png"}
-                alt={name}
+                src={avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${name}`}
+                alt={`Foto de ${name}`}
             />
 
             {/* Informações: Centralizadas no mobile, alinhadas à esquerda no desktop */}

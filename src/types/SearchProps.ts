@@ -1,3 +1,4 @@
 export interface SearchProps {
-    search: string
+    search: string,
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }

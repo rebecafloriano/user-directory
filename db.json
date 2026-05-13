@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Rebeca Erdman",
+      "email": "rebecaoliver09@gmail.com",
+      "role": "Frontend Dev",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Rebeca"
+    },
+
+    {
+      "id": "2",
+      "name": "Miguel Erdman",
+      "email": "miguelerdman@gmail.com",
+      "role": "Backend Dev",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Miguel"
+    },
+    {
+      "id": "3",
+      "name": "Gabriel Erdman",
+      "email": "gabrielerdman@gmail.com",
+      "role": "Fullstack Dev",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Gabriel"
+    },
+    {
+      "id": "4",
+      "name": "João Silva",
+      "email": "João Silva@gmail.com",
+      "role": "Cozinheiro",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Joao"
+    },
+    {
+      "id": "5",
+      "name": "Raquel Santos",
+      "email": "raquelsantos@gmail.com",
+      "role": "manicure",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Raquel"
+    }
+  ]
+}

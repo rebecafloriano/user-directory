@@ -1,7 +1,7 @@
 import type { SearchProps } from "../types/SearchProps";
 import { Search } from "lucide-react";
 
-export const SearchComponent = ({ search, ...props }: SearchProps) => {
+export const SearchComponent = ({ search, onChange, ...props }: SearchProps) => {
 
 
     return (
@@ -20,6 +20,7 @@ export const SearchComponent = ({ search, ...props }: SearchProps) => {
                 name="search"
                 id="search"
                 value={search}
+                onChange={onChange}
                 {...props}
             />
         </div>
