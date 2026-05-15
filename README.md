@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# 🚀 Employee Management - Online CRUD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an employee management application developed with **React**, **TypeScript**, and **Tailwind CSS**. The application allows you to perform all CRUD operations (Create, Read, Update, and Delete) by consuming a real API in the cloud.
 
-Currently, two official plugins are available:
+![Project Demonstration](./src/assets/user-directory-lg.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **[Access the Live Demo Here](https://rebecafloriano.github.io/user-directory/)**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 About the Project
 
-## Expanding the ESLint configuration
+The goal of this application is to facilitate team control, allowing for centralized management of names, emails, and roles.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The main differentiator of this project is the use of **MockAPI**, which acts as a persistent backend. This means that, unlike `localStorage`, the data you save will be available to anyone who accesses the link from any browser, ensuring a true full-stack experience.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### ✨ Features
+* **Employee Listing:** Clear visualization with dynamic avatars.
+* **Full Management (CRUD):** Add, edit information, or remove employees from the list.
+* **Search Filter:** Quickly locate employees by name, email, or role via the search bar.
+* **Automatic Avatars:** Integration with the DiceBear API to generate unique avatars based on the user's name.
+* **Responsive Interface:** Design adaptable for mobile and desktop devices.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* **React** (Vite)
+* **TypeScript** (Static typing for increased code safety)
+* **Tailwind CSS** (Modern and fast styling)
+* **MockAPI** (Remote backend for data persistence)
+* **GitHub Actions** (CI/CD flow for automatic deployment)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 How to Run Locally
+
+If you want to explore the code or make modifications:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/rebecafloriano/user-directory.git](https://github.com/rebecafloriano/user-directory.git)
+    ```
+2.  **Enter the project folder:**
+    ```bash
+    cd user-directory
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the development environment:**
+    ```bash
+    npm run dev
+    ```
+5.  Access `http://localhost:5173` in your browser.
+
+---
+
+## 📦 Deployment and Continuous Integration
+
+This project uses **GitHub Actions**. Whenever new code is pushed to the main branch (`main`), GitHub automatically:
+1. Installs dependencies.
+2. Generates the production version (`build`).
+3. Deploys it to **GitHub Pages**.
+
+This ensures that the official link is always up to date with the latest version of the code.
+
+---
+
+## 📝 Folder Structure
+
+```text
+user-directory/
+├── .github/workflows/ # Automatic Deployment Configuration
+├── src/
+│   ├── components/    # Reusable components
+│   ├── App.tsx        # Main logic (States and API Calls)
+│   ├── main.tsx       # Entry point
+│   └── index.css      # Global styles and Tailwind
+├── assets/            # Project images and screenshots
+└── db.json            # Local data backup (optional)
