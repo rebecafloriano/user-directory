@@ -1,0 +1,37 @@
+name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Ou "master", dependendo da sua branch principal
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Build do projeto
+        run: npm run build
+
+      - name: Upload do artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Pasta que o Vite gera
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4

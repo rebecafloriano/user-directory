@@ -9,6 +9,8 @@ import { useRef } from 'react'
 
 function App() {
 
+  const API_URL = "https://6a0736e6c83ba8ad9b3ea62e.mockapi.io/api/v1/users"
+
   const [users, setUsers] = useState<User[]>([])
   const [searchTerm, setSearchTerm] = useState<string>("")
 
@@ -30,7 +32,7 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch("http://localhost:3001/users")
+      const response = await fetch(API_URL)
       if (!response.ok) throw new Error("Não foi possível carregar dados.")
       const data = await response.json()
       setUsers(data)
@@ -50,7 +52,7 @@ function App() {
     if (!confirm("Tem certeza de que deseja excluir este funcionário?")) return
 
     try {
-      const response = await fetch(`http://localhost:3001/users/${id}`, {
+      const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE"
       })
 
@@ -106,7 +108,7 @@ function App() {
     }
 
     try {
-      const url = editingId ? `http://localhost:3001/users/${editingId}` : "http://localhost:3001/users"
+      const url = editingId ? `${API_URL}/${editingId}` : API_URL
       const method = editingId ? "PUT" : "POST"
 
       const response = await fetch(url, {
