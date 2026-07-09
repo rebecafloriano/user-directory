@@ -78,7 +78,7 @@ function App() {
   const startEdit = (user: User) => {
     setEditingId(user.id)
     setName(user.name)
-    setEmail(user.email)
+    setEmail(user.email.toLowerCase())
     setRole(user.role)
     setAvatar(user.avatar)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -102,7 +102,7 @@ function App() {
     setEmailError(false)
     const userData: Omit<User, 'id'> = {
       name,
-      email,
+      email: email.toLowerCase(),
       role,
       avatar: editingId ? avatar : `https://api.dicebear.com/7.x/avataaars/svg?seed=${name}`
     }
@@ -175,13 +175,13 @@ md:p-6">
             />
 
             <button
-              className="uppercase font-semibold h-9 text-lg self-center w-1/2 bg-green-600 rounded-xl hover:bg-green-700 text-white mt-4"
+              className="uppercase font-semibold h-9 text-lg self-center w-1/2 bg-green-700 rounded-xl hover:bg-green-800 text-white mt-4"
             >
               {editingId ? "Atualizar" : "Salvar"}
             </button>
             {editingId && (
               <button
-                className="text-lg uppercase font-semibold rounded-xl hover:bg-red-800 text-white bg-red-600 w-1/2 self-center h-9 mt-2"
+                className="text-lg uppercase font-semibold rounded-xl hover:bg-red-800 text-white bg-red-700 w-1/2 self-center h-9 mt-2"
                 onClick={() => {
                   setEditingId(null)
                   setName("")

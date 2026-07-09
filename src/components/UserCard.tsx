@@ -34,13 +34,13 @@ export const UserCard = ({ name, email, role, avatar, onDelete, onUpdate }: User
             </div>
             <div className="flex gap-2" >
                 <button
-                    className="uppercase bg-yellow-500 p-1 rounded-lg text-white text-sm font-semibold hover:bg-yellow-800"
+                    className="uppercase bg-yellow-700 p-1 rounded-lg text-white text-sm font-semibold hover:bg-yellow-800"
                     onClick={onUpdate}
                 >
                     Editar
                 </button>
                 <button
-                    className="uppercase bg-red-500 p-1 rounded-lg text-white text-sm font-semibold hover:bg-red-800"
+                    className="uppercase bg-red-700 p-2 rounded-lg text-white text-sm font-semibold hover:bg-red-800"
                     onClick={onDelete}
                 >
                     excluir
