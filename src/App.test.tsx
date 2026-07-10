@@ -28,7 +28,7 @@ describe('Deve renderizar os componentes corretamente', () => {
         ];
 
         // Tornamos o fetch dinâmico
-        vi.stubGlobal('fetch', vi.fn(async (url, options) => {
+        vi.stubGlobal('fetch', vi.fn(async ( options) => {
             // Se as opções tiverem método POST ou PUT, simulamos a gravação
             if (options && (options.method === 'POST' || options.method === 'PUT')) {
                 const body = JSON.parse(options.body);

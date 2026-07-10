@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Atualizado para 2026
+          node-version: 22 
           cache: 'npm'
 
       - name: Instalar dependências
